@@ -17,12 +17,17 @@ export default function useAuth() {
     }
   }, []);
 
-  const isUserLogged = useCallback(async () => {
+  const isAuthenticated = useCallback(async () => {
+    console.log("isAuthenticated");
     try {
-      const {attributes} = await Auth.currentAuthenticatedUser();
-
-      return attributes;
+      const user = await Auth.currentAuthenticatedUser();
+      console.log("USERNAME", user.username);
+      if (!user.username) {
+        return false;
+      }
+      return true;
     } catch (error) {
+      console.log("error", error);
       if (error instanceof Error) {
         throw new Error(error.message);
       }
@@ -41,7 +46,7 @@ export default function useAuth() {
 
   return {
     signIn,
-    isUserLogged,
+    isAuthenticated,
     signOut,
   };
 }
