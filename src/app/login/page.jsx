@@ -1,25 +1,26 @@
-"use client";
-
-import {Auth} from "aws-amplify";
+import {headers} from "next/headers";
+import {withSSRContext} from "aws-amplify";
+import {redirect} from "next/navigation";
 import AWSAuthenticator from "../components/AWSAuthenticator";
-import {useRouter} from "next/navigation";
-import {useEffect} from "react";
 
 export default async function Login() {
-  const route = useRouter();
+  const req = {
+    headers: {
+      cookie: headers().get("cookie"),
+    },
+  };
 
-  useEffect(() => {
-    Auth.currentAuthenticatedUser()
-      .then((res) => {
-        console.log("LOGGED IN");
-        route.push("/");
-        return true;
-      })
-      .catch((err) => {
-        console.log("NOT LOGGED IN", err);
-        return false;
-      });
-  }, []);
+  const {Auth} = withSSRContext({req});
 
-  return <AWSAuthenticator />;
+  try {
+    const user = await Auth.currentAuthenticatedUser();
+    redirect("/");
+  } catch (error) {
+    return (
+      <main className="flex flex-col items-center justify-center w-full h-full">
+        <h1>LOGIN</h1>
+        <AWSAuthenticator />
+      </main>
+    );
+  }
 }
