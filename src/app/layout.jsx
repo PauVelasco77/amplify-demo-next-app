@@ -16,10 +16,6 @@ Amplify.configure({
     region,
     userPoolId,
     userPoolWebClientId,
-    /// without env
-    // region: "eu-west-3",
-    // userPoolId: "eu-west-3_2rn7vUqE6",
-    // userPoolWebClientId: "5q6fu1vdu9amke658k9p4ijgc7",
   },
   ssr: true,
 });
