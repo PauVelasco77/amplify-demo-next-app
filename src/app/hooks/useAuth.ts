@@ -18,16 +18,13 @@ export default function useAuth() {
   }, []);
 
   const isAuthenticated = useCallback(async () => {
-    console.log("isAuthenticated");
     try {
       const user = await Auth.currentAuthenticatedUser();
-      console.log("USERNAME", user.username);
       if (!user.username) {
         return false;
       }
       return true;
     } catch (error) {
-      console.log("error", error);
       if (error instanceof Error) {
         throw new Error(error.message);
       }

@@ -12,7 +12,6 @@ export default function Login() {
   async function isUserAuthenticated() {
     try {
       await Auth.currentAuthenticatedUser();
-      console.log("User is authenticated");
       route.push("/");
     } catch (error) {
       setIsLogged(false);
@@ -20,7 +19,6 @@ export default function Login() {
   }
 
   useEffect(() => {
-    console.log("HOLA");
     isUserAuthenticated();
   }, [isUserAuthenticated, setIsLogged]);
 
