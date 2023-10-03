@@ -1,7 +1,6 @@
 "use client";
 
 import {Authenticator} from "@aws-amplify/ui-react";
-import {Amplify} from "aws-amplify";
 
 export default function AWSAuthenticator() {
   return (

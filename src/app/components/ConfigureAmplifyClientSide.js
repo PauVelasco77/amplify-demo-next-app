@@ -5,9 +5,9 @@ import {Amplify} from "aws-amplify";
 Amplify.configure({
   Auth: {
     mandatorySignId: true,
-    region: "eu-west-3",
-    userPoolId: "eu-west-3_2rn7vUqE6",
-    userPoolWebClientId: "5q6fu1vdu9amke658k9p4ijgc7",
+    region: process.env.AWS_REGION,
+    userPoolId: process.env.AWS_USER_POOL_ID,
+    userPoolWebClientId: process.env.AWS_USER_POOL_WEB_CLIENT_ID,
   },
   ssr: true,
 });
