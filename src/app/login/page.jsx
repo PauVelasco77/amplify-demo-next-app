@@ -27,7 +27,7 @@ export default function Login() {
   return (
     <main className="flex flex-col items-center justify-center w-full h-full">
       <Suspense fallback={<h1>LOADING!!!!</h1>}>
-        {isLogged && (
+        {!isLogged && (
           <div>
             <h1>LOGIN</h1>
             <AWSAuthenticator />
