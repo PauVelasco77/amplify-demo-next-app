@@ -80,7 +80,7 @@
     "@aws-amplify/core" "5.8.5"
     tslib "^1.8.0"
 
-"@aws-amplify/core@5.8.5", "@aws-amplify/core@^5.8.5":
+"@aws-amplify/core@5.8.5":
   version "5.8.5"
   resolved "https://registry.yarnpkg.com/@aws-amplify/core/-/core-5.8.5.tgz#b9d55ddecd477636b0a0a2ea015280dfdb5a54e3"
   integrity sha512-R7zB+VUyNRT/7GCfBfWOIz2vy70VbHNfhotbdyo02ZVcc4vyXt+tsdZvvMSm1SB5uQ411jiAfDmTvOzLOIaJsA==
