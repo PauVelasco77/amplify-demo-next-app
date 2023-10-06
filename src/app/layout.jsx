@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ConfigureAmplifyClientSide from "./components/ConfigureAmplifyClientSide";
-import "@aws-amplify/ui-react/styles.css";
 import "./globals.css";
+import "@aws-amplify/ui-react/styles.css";
 import LogoutButton from "./components/LogoutButton";
 import {Amplify} from "aws-amplify";
 import {awsExports} from "../../awsExports";
