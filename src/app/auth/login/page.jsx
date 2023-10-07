@@ -1,7 +1,7 @@
 "use client";
 
 import {Suspense, useEffect, useState} from "react";
-import AWSAuthenticator from "../components/AWSAuthenticator";
+import AWSAuthenticator from "../../components/AWSAuthenticator";
 import {useRouter} from "next/navigation";
 import {Auth} from "aws-amplify";
 
