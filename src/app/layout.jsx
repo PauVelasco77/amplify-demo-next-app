@@ -25,7 +25,7 @@ export default function RootLayout({children}) {
             <li>
               <Link href="/">Home</Link>
               <br />
-              <Link href="/login">Login</Link>
+              <Link href="/auth/login">Login</Link>
               <br />
               <LogoutButton />
             </li>
