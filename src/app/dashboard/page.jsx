@@ -20,6 +20,6 @@ export default async function Dashboard() {
       </main>
     );
   } catch (error) {
-    redirect("/login");
+    redirect("/auth/login");
   }
 }
